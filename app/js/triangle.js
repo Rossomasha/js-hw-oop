@@ -2,6 +2,11 @@ import Point from './point';
 import Polygon from './polygon';
 
 class Triangle extends Polygon {
+
+    draw(color = '#ff6400') {
+        super.draw(color);
+    };
+
     get area() {
         let p = this.perimeter/2,
             a = Point.distance(this.dots[0],this.dots[1]),
