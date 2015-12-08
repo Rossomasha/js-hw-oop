@@ -9,6 +9,7 @@ const gulp = require('gulp'),
     browserify = require('browserify'),
     babelify = require('babelify'),
     gutil = require('gutil'),
+    sourcemaps = require('gulp-sourcemaps'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
     uglify = require('gulp-uglify'),
@@ -34,7 +35,9 @@ gulp.task('scripts', () => {
     return b.bundle()
         .pipe(source('index.js'))
         .pipe(buffer())
-        //.pipe(uglify())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('dist/js'))
         .pipe(livereload());
 });
