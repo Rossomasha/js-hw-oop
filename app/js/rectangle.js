@@ -1,3 +1,4 @@
+import {ctx, cw, ch, offsetW, offsetH} from './canvas-init';
 import Polygon from './polygon';
 
 class Rectangle extends Polygon {
@@ -8,6 +9,13 @@ class Rectangle extends Polygon {
 
         this.width = width;
         this.height = height;
+    }
+
+    draw(color = '#2043CA') {
+        ctx.beginPath();
+        ctx.fillStyle = color;
+        ctx.strokeRect(this.x*10 + offsetW, - this.y*10 + offsetH, this.width*10, this.height*10);
+        ctx.closePath();
     }
 
     get perimeter() {

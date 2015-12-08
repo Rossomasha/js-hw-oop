@@ -34,7 +34,7 @@ gulp.task('scripts', () => {
     return b.bundle()
         .pipe(source('index.js'))
         .pipe(buffer())
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest('dist/js'))
         .pipe(livereload());
 });
