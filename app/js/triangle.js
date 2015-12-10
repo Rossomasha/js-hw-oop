@@ -5,7 +5,7 @@ class Triangle extends Polygon {
 
     draw(color = '#ff6400') {
         super.draw(color);
-    };
+    }
 
     get area() {
         let p = this.perimeter/2,
