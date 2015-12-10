@@ -2,8 +2,8 @@ const canvas = document.getElementById("canvas"),
       ctx    = canvas.getContext('2d'),
       cw     = canvas.width,
       ch     = canvas.height,
-      offsetW = cw/2+0.5,
-      offsetH = ch/2+0.5;
+      offsetW = cw/2,
+      offsetH = ch/2;
 
 //grid
 for (var x = 0.5; x < cw; x += 10) {
